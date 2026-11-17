@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genealogia Cordeiro Maciel & Machado</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Genealogia Cordeiro Maciel &amp; Machado</h1>
+      <p class="subtitle">Descendência e ancestrais de Antônio de Assis Machado Neto (Toniquinho) e Matildes Cordeiro Maciel</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="container">
+      <a href="#casal" class="nav-link active">Casal Central</a>
+      <a href="#filhos" class="nav-link">Os 13 Filhos</a>
+      <a href="#jorge-joaquina" class="nav-link">Jorge &amp; Joaquina</a>
+      <a href="#ancestrais" class="nav-link">Ancestrais</a>
+      <a href="#sugestoes" class="nav-link">Sugestões</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- CASAL CENTRAL -->
+    <section id="casal" class="section">
+      <h2>Casal Central</h2>
+      <div class="couple-cards">
+        <article class="person-card male" id="card-toniquinho">
+          <div class="person-header">
+            <span class="badge">♂</span>
+            <h3>Antônio de Assis Machado Neto</h3>
+            <p class="nickname">Toniquinho</p>
+          </div>
+          <div class="person-body">
+            <p><strong>Nascimento:</strong> <span data-field="nasc-t">11/12/1924</span></p>
+            <p><strong>Local:</strong> Pompéu, Minas Gerais</p>
+            <p><strong>Falecimento:</strong> 22/10/1993 — Contagem, MG</p>
+            <p><strong>Pais:</strong> Lafaiete Cordeiro Filho e Maria Rosa de Campos Machado</p>
+          </div>
+        </article>
+
+        <div class="couple-connector">❤</div>
+
+        <article class="person-card female" id="card-matildes">
+          <div class="person-header">
+            <span class="badge">♀</span>
+            <h3>Matildes Cordeiro Maciel</h3>
+          </div>
+          <div class="person-body">
+            <p><strong>Pais:</strong> José Pedro Duarte Maciel e Inês Cordeiro Maciel</p>
+            <p><strong>Avós maternos:</strong> Jorge Cordeiro Valadares e Joaquina Bernarda de Castro Machado</p>
+          </div>
+        </article>
+      </div>
+      <p class="note">Este casal teve <strong>13 filhos</strong>.</p>
+    </section>
+
+    <!-- OS 13 FILHOS -->
+    <section id="filhos" class="section">
+      <h2>Os 13 Filhos</h2>
+      <div class="children-grid" id="filhos-container">
+        <!-- Preenchido via JavaScript -->
+      </div>
+    </section>
+
+    <!-- JORGE & JOAQUINA -->
+    <section id="jorge-joaquina" class="section">
+      <h2>Os dois casais Jorge &amp; Joaquina Bernarda</h2>
+      <p class="intro">Existem dois casais diferentes com nomes muito parecidos na família. Ambos são importantes na árvore.</p>
+
+      <div class="two-couples">
+        <article class="couple-block">
+          <h3>Casal mais recente (sogros do Taquinho)</h3>
+          <div class="couple-mini">
+            <div class="mini-person male">
+              <strong>Jorge Cordeiro Maciel</strong>
+              <span>15/08/1907 – 25/09/1980</span>
+              <small>Filho de José Firmino Cordeiro Maciel e Matilde Cordeiro Valadares</small>
+            </div>
+            <div class="mini-person female">
+              <strong>Joaquina Bernarda de Castro Machado</strong>
+              <span>02/08/1905 – set/1981</span>
+              <small>Filha de Gustavo da Cunha Sá e Castro e America de Castro Machado</small>
+            </div>
+          </div>
+          <h4>Filhos deste casal:</h4>
+          <ul class="simple-list" id="filhos-jorge-maciel">
+            <li>Cleusa Maria Cordeiro Machado (esposa do Taquinho)</li>
+            <li>América Cordeiro Maciel</li>
+            <li>José Naíde Cordeiro Maciel</li>
+            <li>Sebastião Cordeiro Maciel</li>
+          </ul>
+        </article>
+
+        <article class="couple-block">
+          <h3>Casal mais antigo (avós da Matildes)</h3>
+          <div class="couple-mini">
+            <div class="mini-person male">
+              <strong>Jorge Cordeiro Valadares</strong>
+              <span>1860 – 1910</span>
+            </div>
+            <div class="mini-person female">
+              <strong>Joaquina Bernarda de Castro Machado</strong>
+              <span>1865 – 1920</span>
+            </div>
+          </div>
+          <h4>Filha conhecida:</h4>
+          <ul class="simple-list">
+            <li>Inês Cordeiro Maciel (mãe da Matildes)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ANCESTRAIS -->
+    <section id="ancestrais" class="section">
+      <h2>Ancestrais</h2>
+      
+      <div class="ancestors-columns">
+        <div class="ancestors-col">
+          <h3>Lado de Toniquinho</h3>
+          <div id="ancestrais-toniquinho" class="tree-list">
+            <!-- Preenchido via JS -->
+          </div>
+        </div>
+        <div class="ancestors-col">
+          <h3>Lado de Matildes</h3>
+          <div id="ancestrais-matildes" class="tree-list">
+            <!-- Preenchido via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUGESTÕES -->
+    <section id="sugestoes" class="section">
+      <h2>Sugerir correção ou acréscimo</h2>
+      <p>Viu algo errado ou falta alguém? Preencha o que souber. Nada é alterado automaticamente: sua sugestão chega à pessoa responsável pela genealogia, que confere os dados antes de atualizar.</p>
+
+      <form class="suggestion-form" id="form-sugestao" onsubmit="return enviarSugestao(event)">
+        <div class="form-row">
+          <label for="tipo">Tipo de sugestão</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Selecione...</option>
+            <option value="correcao">Correção de dados</option>
+            <option value="acrescimo">Acréscimo de pessoa</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="pessoa">Pessoa relacionada</label>
+          <input type="text" id="pessoa" name="pessoa" placeholder="Ex: José Eustáquio Cordeiro Machado">
+        </div>
+
+        <div class="form-row">
+          <label for="campo">Campo a corrigir ou acrescentar</label>
+          <input type="text" id="campo" name="campo" placeholder="Ex: data de nascimento, cônjuge, filho...">
+        </div>
+
+        <div class="form-row">
+          <label for="como-consta">Como consta hoje</label>
+          <input type="text" id="como-consta" name="como-consta">
+        </div>
+
+        <div class="form-row">
+          <label for="sugestao">Sugestão (como deveria constar)</label>
+          <input type="text" id="sugestao" name="sugestao" required>
+        </div>
+
+        <div class="form-row">
+          <label for="fonte">Fonte ou documento</label>
+          <input type="text" id="fonte" name="fonte" placeholder="Certidão, registro, lembrança de familiar...">
+        </div>
+
+        <div class="form-row">
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" name="observacoes" rows="3"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="seu-nome">Seu nome</label>
+          <input type="text" id="seu-nome" name="seu-nome" required>
+        </div>
+
+        <div class="form-row">
+          <label for="parentesco">Seu parentesco com a família</label>
+          <input type="text" id="parentesco" name="parentesco">
+        </div>
+
+        <div class="form-row">
+          <label for="contato">Contato (e-mail ou telefone)</label>
+          <input type="text" id="contato" name="contato" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Enviar sugestão por e-mail</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Genealogia Cordeiro Maciel &amp; Machado · Dados organizados a partir de registros familiares</p>
+      <p class="small">Site hospedado no GitHub Pages · Contribuições são bem-vindas</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
