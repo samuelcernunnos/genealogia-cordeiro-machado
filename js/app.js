@@ -214,38 +214,22 @@ function renderAncestrais(raiz, containerId) {
   container.innerHTML = `<ul class="arvore">${pessoaAncestral(raiz, "")}</ul>`;
 }
 
-function enviarSugestao(event) {
+// Cole aqui a URL do Google Apps Script (termina em /exec)
+const URL_FORMULARIO = "https://script.google.com/macros/s/AKfycbwsm4o8BX60XeqKcCCo88a6-Ovm2m3oQPsR5ExAcTyDj8aR3LA4B-q867zAgq-2_aVL/exec";
+
+async function enviarSugestao(event) {
   event.preventDefault();
   const form = event.target;
-  const data = {
-    tipo: form.tipo.value,
-    pessoa: form.pessoa.value,
-    campo: form.campo.value,
-    comoConsta: form["como-consta"].value,
-    sugestao: form.sugestao.value,
-    fonte: form.fonte.value,
-    observacoes: form.observacoes.value,
-    nome: form["seu-nome"].value,
-    parentesco: form.parentesco.value,
-    contato: form.contato.value
-  };
-  const corpo = `
-Tipo: ${data.tipo}
-Pessoa relacionada: ${data.pessoa}
-Campo: ${data.campo}
-Como consta hoje: ${data.comoConsta}
-Sugestão: ${data.sugestao}
-Fonte: ${data.fonte}
-Observações: ${data.observacoes}
+  const dados = new URLSearchParams(new FormData(form));
 
-Enviado por: ${data.nome}
-Parentesco: ${data.parentesco}
-Contato: ${data.contato}
-  `.trim();
-  const assunto = encodeURIComponent("Sugestão de genealogia - Cordeiro Maciel & Machado");
-  const body = encodeURIComponent(corpo);
-    const email = "samuelcernunnos+genealogia@gmail.com";
-  window.location.href = `mailto:${email}?subject=${assunto}&body=${body}`;
+  try {
+    // no-cors: o envio acontece mesmo sem poder ler a resposta
+    await fetch(URL_FORMULARIO, { method: "POST", mode: "no-cors", body: dados });
+    alert("Sugestão enviada. Obrigado!");
+    form.reset();
+  } catch (err) {
+    alert("Não foi possível enviar agora. Tente de novo mais tarde.");
+  }
   return false;
 }
 
