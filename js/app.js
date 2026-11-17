@@ -116,51 +116,68 @@ const DESCENDENTES_JORGE = [
 ];
 
 // ---------- ANCESTRAIS ----------
-const ANCESTRAIS_ANTONIO = [
-  { depth: 0, nome: "Antônio de Assis Machado Neto (Toniquinho)", datas: "1924 – 1993" },
-  { depth: 1, nome: "Lafaiete Cordeiro Filho", datas: "1896 – 1954" },
-  { depth: 2, nome: "Lafaiete Cordeiro Valadares", datas: "" },
-  { depth: 3, nome: "José Cordeiro Valadares", datas: "1804 – 1900" },
-  { depth: 3, nome: "Ana Leopoldina Rocha Moreira", datas: "1805 – 1868" },
-  { depth: 2, nome: "Teresa de Campos Cordeiro", datas: "≈1876" },
-  { depth: 3, nome: "Belchior de Campos Cordeiro", datas: "1834" },
-  { depth: 3, nome: "Isabel Jacinta de Campos Cordeiro", datas: "≈1836" },
-  { depth: 1, nome: "Maria Rosa de Campos Machado", datas: "" },
-  { depth: 2, nome: "Antônio de Assis Machado", datas: "1873" },
-  { depth: 3, nome: "Luis Joaquim de Souza Machado", datas: "1847 – 1920" },
-  { depth: 3, nome: "Josefina de Oliveira Machado", datas: "" },
-  { depth: 2, nome: "Antônia de Campos Cordeiro", datas: "1873 – 1973" },
-  { depth: 3, nome: "Higino de Campos Cordeiro Valadares", datas: "1839 – 1911" },
-  { depth: 3, nome: "Maria Joaquina de Campos Cordeiro Valadares", datas: "1853 – 1945" }
-];
+// Cada pessoa tem "pais" (pai e mãe), que por sua vez têm os próprios pais.
 
-const ANCESTRAIS_MATILDES = [
-  { depth: 0, nome: "Matildes Cordeiro Maciel", datas: "1926 – 1997" },
-  { depth: 1, nome: "José Pedro Duarte Maciel (Zé da Iá)", datas: "1890 – 1950" },
-  { depth: 2, nome: "Moises Duarte Maciel", datas: "antes de 1858" },
-  { depth: 3, nome: "Joaquim José Duarte Silva", datas: "≈1834" },
-  { depth: 3, nome: "Lucia Vieira Maciel", datas: "1834 – 1877" },
-  { depth: 2, nome: "Maria Bernarda de Castro Maciel", datas: "" },
-  { depth: 1, nome: "Inês Cordeiro Maciel", datas: "1891 – 1955" },
-  { depth: 2, nome: "Jorge Cordeiro Valadares", datas: "1860 – 1910" },
-  { depth: 2, nome: "Joaquina Bernarda de Castro Machado", datas: "1865 – 1920" }
-];
+const ANCESTRAIS_ANTONIO = {
+  nome: "Antônio de Assis Machado Neto (Toniquinho)", datas: "1924 – 1993", pais: [
+    { rotulo: "Pai", nome: "Lafaiete Cordeiro Filho", datas: "1896 – 1954", pais: [
+      { rotulo: "Pai", nome: "Lafaiete Cordeiro Valadares", pais: [
+        { rotulo: "Pai", nome: "José Cordeiro Valadares", datas: "1804 – 1900" },
+        { rotulo: "Mãe", nome: "Ana Leopoldina Rocha Moreira", datas: "1805 – 1868" }
+      ] },
+      { rotulo: "Mãe", nome: "Teresa de Campos Cordeiro", datas: "≈1876", pais: [
+        { rotulo: "Pai", nome: "Belchior de Campos Cordeiro", datas: "1834" },
+        { rotulo: "Mãe", nome: "Isabel Jacinta de Campos Cordeiro", datas: "≈1836" }
+      ] }
+    ] },
+    { rotulo: "Mãe", nome: "Maria Rosa de Campos Machado", pais: [
+      { rotulo: "Pai", nome: "Antônio de Assis Machado", datas: "1873", pais: [
+        { rotulo: "Pai", nome: "Luis Joaquim de Souza Machado", datas: "1847 – 1920" },
+        { rotulo: "Mãe", nome: "Josefina de Oliveira Machado" }
+      ] },
+      { rotulo: "Mãe", nome: "Antônia de Campos Cordeiro", datas: "1873 – 1973", pais: [
+        { rotulo: "Pai", nome: "Higino de Campos Cordeiro Valadares", datas: "1839 – 1911" },
+        { rotulo: "Mãe", nome: "Maria Joaquina de Campos Cordeiro Valadares", datas: "1853 – 1945" }
+      ] }
+    ] }
+  ]
+};
 
-const ANCESTRAIS_JORGE = [
-  { depth: 0, nome: "Jorge Cordeiro Maciel", datas: "1907 – 1980" },
-  { depth: 1, nome: "José Firmino Cordeiro Maciel (Juca da Invejosa)", datas: "" },
-  { depth: 1, nome: "Matilde Cordeiro Valadares", datas: "1832 – 1900" },
-  { depth: 2, nome: "Jorge Cordeiro Valladares", datas: "≈1805" },
-  { depth: 3, nome: "João Cordeiro Valadares", datas: "" },
-  { depth: 3, nome: "Ana Joaquina de Oliveira Campos", datas: "" },
-  { depth: 2, nome: "Maria Madalena da Costa Sampaio", datas: "" }
-];
+const ANCESTRAIS_MATILDES = {
+  nome: "Matildes Cordeiro Maciel", datas: "1926 – 1997", pais: [
+    { rotulo: "Pai", nome: "José Pedro Duarte Maciel (Zé da Iá)", datas: "1890 – 1950", pais: [
+      { rotulo: "Pai", nome: "Moises Duarte Maciel", datas: "antes de 1858", pais: [
+        { rotulo: "Pai", nome: "Joaquim José Duarte Silva", datas: "≈1834" },
+        { rotulo: "Mãe", nome: "Lucia Vieira Maciel", datas: "1834 – 1877" }
+      ] },
+      { rotulo: "Mãe", nome: "Maria Bernarda de Castro Maciel" }
+    ] },
+    { rotulo: "Mãe", nome: "Inês Cordeiro Maciel", datas: "1891 – 1955", pais: [
+      { rotulo: "Pai", nome: "Jorge Cordeiro Valadares", datas: "1860 – 1910" },
+      { rotulo: "Mãe", nome: "Joaquina Bernarda de Castro Machado", datas: "1865 – 1920" }
+    ] }
+  ]
+};
 
-const ANCESTRAIS_JOAQUINA = [
-  { depth: 0, nome: "Joaquina Bernarda de Castro Machado", datas: "1905 – 1981" },
-  { depth: 1, nome: "Gustavo da Cunha Sá e Castro", datas: "" },
-  { depth: 1, nome: "América de Castro Machado", datas: "" }
-];
+const ANCESTRAIS_JORGE = {
+  nome: "Jorge Cordeiro Maciel", datas: "1907 – 1980", pais: [
+    { rotulo: "Pai", nome: "José Firmino Cordeiro Maciel (Juca da Invejosa)" },
+    { rotulo: "Mãe", nome: "Matilde Cordeiro Valadares", datas: "1832 – 1900", pais: [
+      { rotulo: "Pai", nome: "Jorge Cordeiro Valladares", datas: "≈1805", pais: [
+        { rotulo: "Pai", nome: "João Cordeiro Valadares" },
+        { rotulo: "Mãe", nome: "Ana Joaquina de Oliveira Campos" }
+      ] },
+      { rotulo: "Mãe", nome: "Maria Madalena da Costa Sampaio" }
+    ] }
+  ]
+};
+
+const ANCESTRAIS_JOAQUINA = {
+  nome: "Joaquina Bernarda de Castro Machado", datas: "1905 – 1981", pais: [
+    { rotulo: "Pai", nome: "Gustavo da Cunha Sá e Castro" },
+    { rotulo: "Mãe", nome: "América de Castro Machado" }
+  ]
+};
 
 // ---------- RENDERIZAÇÃO ----------
 function pessoaHtml(p) {
@@ -180,14 +197,21 @@ function renderDescendentes(lista, containerId) {
   container.innerHTML = `<ul class="arvore">${lista.map(pessoaHtml).join("")}</ul>`;
 }
 
-function renderAncestrais(list, containerId) {
+function pessoaAncestral(p, rotulo) {
+  const label = rotulo ? `<span class="rotulo">${rotulo}:</span> ` : "";
+  const datas = p.datas ? ` <span class="meta">${p.datas}</span>` : "";
+  const cabeca = `${label}<strong>${p.nome}</strong>${datas}`;
+  if (!p.pais || !p.pais.length) return `<li>${cabeca}</li>`;
+  return `<li><details open>
+      <summary>${cabeca}</summary>
+      <ul class="arvore">${p.pais.map(x => pessoaAncestral(x, x.rotulo)).join("")}</ul>
+    </details></li>`;
+}
+
+function renderAncestrais(raiz, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  container.innerHTML = list.map(item => `
-      <div class="tree-item" style="--depth: ${item.depth}" data-depth="${item.depth}">
-        <span class="nome">${item.nome}</span>
-        ${item.datas ? `<span class="datas"> · ${item.datas}</span>` : ""}
-      </div>`).join("");
+  container.innerHTML = `<ul class="arvore">${pessoaAncestral(raiz, "")}</ul>`;
 }
 
 function enviarSugestao(event) {
@@ -220,8 +244,7 @@ Contato: ${data.contato}
   `.trim();
   const assunto = encodeURIComponent("Sugestão de genealogia - Cordeiro Maciel & Machado");
   const body = encodeURIComponent(corpo);
-  // Substitua pelo e-mail real da pessoa responsável
-  const email = "samuelcernunnos@mail.com";
+    const email = "samuelcernunnos+genealogia@gmail.com";
   window.location.href = `mailto:${email}?subject=${assunto}&body=${body}`;
   return false;
 }
