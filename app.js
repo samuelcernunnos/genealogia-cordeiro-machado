@@ -1,74 +1,121 @@
 // Genealogia Cordeiro Maciel & Machado
+// Fontes: CSV da árvore, descendentes_de_toniquinho.md e Genealogia_Avós_Maternos.docx
 
-// Filhos de Antônio (Toniquinho) e Matildes, com netos quando registrados
-const FILHOS_ANTONIO = [
-  { nome: "Deusdede Cordeiro Machado", sexo: "M", nascimento: "22/10/1947", conjuges: ["Nadir Ferreira Machado", "Thaize Danielle de Oliveira"] },
-  { nome: "Delma Maria de Campos Machado", sexo: "F", nascimento: "09/04/1948", conjuges: ["Sebastião José Gonçalves"] },
-  { nome: "José Eustáquio Cordeiro Machado", apelido: "Taquinho", sexo: "M", nascimento: "01/02/1950", conjuges: ["Cleusa Maria Cordeiro"],
-    filhos: [{ nome: "Jorge Eustáquio Cordeiro Machado", nascimento: "22/01/1982", conjuges: ["Olívia Santos Torres Vieira"] }] },
-  { nome: "Vândel Cordeiro Machado", sexo: "M", nascimento: "03/12/1952" },
-  { nome: "Rosemar Cordeiro Machado Siqueira", sexo: "F", nascimento: "16/01/1954", observacao: "Gêmea. Viúva de Wânder Siqueira de Oliveira." },
-  { nome: "Rosimeire Cordeiro Machado", sexo: "F", nascimento: "16/01/1954", observacao: "Gêmea. Falecida em criança." },
-  { nome: "José Romilson Cordeiro Machado", sexo: "M", nascimento: "16/11/1956", conjuges: ["Doralice Lana Cordeiro Machado"],
-    filhos: [
-      { nome: "Desirée Silva Lana Cordeiro Machado", nascimento: "28/08/1983" },
-      { nome: "José Romilson Cordeiro Machado Filho", nascimento: "21/02/1986" }
+// ---------- DESCENDÊNCIA DE ANTÔNIO (TONIQUINHO) E MATILDES ----------
+const DESCENDENTES_ANTONIO = [
+  { nome: "Deusdede Cordeiro Machado", nasc: "22/10/1947", conj: "Nadir Ferreira Machado (1952) e, antes, Thaize Danielle de Oliveira", filhos: [
+    { nome: "Sied de Paula Cordeiro", nasc: "05/03/1979", conj: "Vera Lúcia Rodrigues Ramos (1974)", filhos: [
+      { nome: "Kathllen Cristina Rodrigues Cordeiro", nasc: "18/07/1996" },
+      { nome: "Caroline Rodrigues Cordeiro", nasc: "03/11/1999" }
     ] },
-  { nome: "Francisco Radilson Cordeiro Machado", sexo: "M", nascimento: "30/07/1958", conjuges: ["Márcia Mendes Ferreira Machado"],
-    filhos: [
-      { nome: "Camila Mendes Ferreira Cordeiro Machado", nascimento: "06/07/1991" },
-      { nome: "Gabriela Mendes Ferreira Cordeiro Machado", nascimento: "20/02/1993" },
-      { nome: "Priscila Mendes Ferreira Cordeiro Machado", nascimento: "15/01/1997" }
+    { nome: "Micilene Paula Cordeiro", nasc: "21/05/1981" },
+    { nome: "Antônia Paula Cordeiro", obs: "falecida em criança" },
+    { nome: "Alex Paula Cordeiro", nasc: "09/07/1983" },
+    { nome: "Adriana Cordeiro de Oliveira", nasc: "11/03/1971", conj: "Mário Afonso da Silva (Marinho) (1968)", filhos: [
+      { nome: "Felipe Afonso Cordeiro da Silva", nasc: "27/09/1991" },
+      { nome: "Fernanda Afonso Cordeiro da Silva", nasc: "22/05/1997" }
     ] },
-  { nome: "Maria Elite Cordeiro Machado", sexo: "F", nascimento: "02/10/1960", conjuges: ["José Virgílio Bastos Pereira"],
-    filhos: [{ nome: "Ana Raquel Cordeiro Bastos Pereira", nascimento: "23/02/1998" }] },
-  { nome: "Inês Aparecida Cordeiro Machado Ullmann", sexo: "F", nascimento: "10/10/1963", conjuges: ["Klaus Dieter Ullmann"],
-    filhos: [
-      { nome: "Stephanie Machado Ullmann", nascimento: "13/02/1993" },
-      { nome: "Saskia Machado Ullmann", nascimento: "14/09/1995" }
-    ] },
-  { nome: "Rosa Mônica Cordeiro Machado Rangel", sexo: "F", nascimento: "16/05/1965", conjuges: ["Antônio Roberto Rangel"],
-    filhos: [
-      { nome: "Nara Cordeiro Rangel", nascimento: "08/02/1990" },
-      { nome: "Milene Cordeiro Rangel", nascimento: "31/07/1991" },
-      { nome: "Marcelo Cordeiro Rangel", nascimento: "25/07/2000" },
-      { nome: "Marina Cordeiro Rangel", nascimento: "28/11/2001" }
-    ] },
-  { nome: "Vicente Cordeiro Machado", sexo: "M", nascimento: "01/01/1966" },
-  { nome: "Lafaiete Cordeiro Machado", sexo: "M", nascimento: "16/03/1968", conjuges: ["Masuleide Aparecida Rocha de Queiroz"],
-    filhos: [
-      { nome: "Hiago Henrique Queiroz Cordeiro Machado", nascimento: "11/05/1995" },
-      { nome: "Igor Lafaiete Queiroz Machado", nascimento: "23/03/1997" }
+    { nome: "Anna Clara Oliveira Cordeiro", obs: "filha de Thaize" },
+    { nome: "Deusdede Junio Oliveira Cordeiro", obs: "filho de Thaize" }
+  ] },
+  { nome: "Delma Maria de Campos Machado", nasc: "09/04/1948", conj: "Sebastião José Gonçalves" },
+  { nome: "José Eustáquio Cordeiro Machado (Taquinho)", nasc: "01/02/1950", obs: "falecido em 04/04/2019", conj: "Cleusa Maria Cordeiro (1942), filha de Jorge e Joaquina (ver seção abaixo)", filhos: [
+    { nome: "Jorge Eustáquio Cordeiro Machado", nasc: "22/01/1982", conj: "Olívia Santos Torres Vieira (1979)" }
+  ] },
+  { nome: "Vândel Cordeiro Machado", nasc: "03/12/1952" },
+  { nome: "Rosemar Cordeiro Machado Siqueira", nasc: "16/01/1954", obs: "gêmea; viúva de Wânder Siqueira de Oliveira; sem filhos" },
+  { nome: "Rosimeire Cordeiro Machado", nasc: "16/01/1954", obs: "gêmea; falecida em criança" },
+  { nome: "José Romilson Cordeiro Machado", nasc: "16/11/1956", conj: "Doralice Lana Cordeiro Machado", filhos: [
+    { nome: "Desirée Silva Lana Cordeiro Machado", nasc: "28/08/1983" },
+    { nome: "José Romilson Cordeiro Machado Filho", nasc: "21/02/1986" }
+  ] },
+  { nome: "Francisco Radilson Cordeiro Machado", nasc: "30/07/1958", conj: "Márcia Mendes Ferreira Machado (1966)", filhos: [
+    { nome: "Camila Mendes Ferreira Cordeiro Machado", nasc: "06/07/1991" },
+    { nome: "Gabriela Mendes Ferreira Cordeiro Machado", nasc: "20/02/1993" },
+    { nome: "Priscila Mendes Ferreira Cordeiro Machado", nasc: "15/01/1997" }
+  ] },
+  { nome: "Maria Elite Cordeiro Machado", nasc: "02/10/1960", conj: "José Virgílio Bastos Pereira (1935–2017)", filhos: [
+    { nome: "Ana Raquel Cordeiro Bastos Pereira", nasc: "23/02/1998" }
+  ] },
+  { nome: "Inês Aparecida Cordeiro Machado Ullmann", nasc: "10/10/1963", conj: "Klaus Dieter Ullmann (1956). Residem na Alemanha", filhos: [
+    { nome: "Stephanie Machado Ullmann", nasc: "13/02/1993" },
+    { nome: "Saskia Machado Ullmann", nasc: "14/09/1995" }
+  ] },
+  { nome: "Rosa Mônica Cordeiro Machado Rangel", nasc: "16/05/1965", conj: "Antônio Roberto Rangel (1954)", filhos: [
+    { nome: "Nara Cordeiro Rangel", nasc: "08/02/1990" },
+    { nome: "Milene Cordeiro Rangel", nasc: "31/07/1991" },
+    { nome: "Marcelo Cordeiro Rangel", nasc: "25/07/2000" },
+    { nome: "Marina Cordeiro Rangel", nasc: "28/11/2001" }
+  ] },
+  { nome: "Vicente Cordeiro Machado", nasc: "01/01/1966" },
+  { nome: "Lafaiete Cordeiro Machado", nasc: "16/03/1968", conj: "Masuleide Aparecida Rocha de Queiroz (1977)", filhos: [
+    { nome: "Hiago Henrique Queiroz Cordeiro Machado", nasc: "11/05/1995" },
+    { nome: "Igor Lafaiete Queiroz Machado", nasc: "23/03/1997" }
+  ] }
+];
+
+// ---------- DESCENDÊNCIA DE JORGE CORDEIRO MACIEL E JOAQUINA BERNARDA DE CASTRO MACHADO ----------
+const DESCENDENTES_JORGE = [
+  { nome: "América Cordeiro da Silva (Fia)", nasc: "03/04/1934", conj: "José Francisco da Silva (1927–1956)", filhos: [
+    { nome: "Milton Francisco da Silva", nasc: "28/06/1951", conj: "Neuza Maria da Silva (1951)", filhos: [
+      { nome: "Júlio César da Silva", nasc: "28/06/1979", conj: "Sandra Barbosa da Silva", filhos: [
+        { nome: "Felipe Pablo da Silva", nasc: "15/04/2003" }
+      ] },
+      { nome: "Paola Rodrigues da Silva", nasc: "13/05/1982", conj: "Paulo Araújo; depois Gildo Inácio de Oliveira", filhos: [
+        { nome: "Eduardo Jorge Rodrigues Araujo", nasc: "02/09/2002" }
+      ] },
+      { nome: "Paulo César da Silva", nasc: "05/02/1987" }
     ] }
+  ] },
+  { nome: "José Naíde Cordeiro Maciel", nasc: "03/02/1937", conj: "Maria das Dores Batista Maciel (1939)", filhos: [
+    { nome: "Marlene Batista Maciel", nasc: "04/07/1959", conj: "Antônio de Almeida Duarte (1952)", filhos: [
+      { nome: "Rafael Maciel Duarte", nasc: "12/03/1984" },
+      { nome: "Fellipe Maciel Duarte" }
+    ] },
+    { nome: "Maria Gorethe Maciel Duarte", nasc: "05/01/1963", conj: "Carlos César Gonçalves Duarte (1955)", filhos: [
+      { nome: "Karla Veridiana Maciel Duarte", nasc: "22/11/1982" },
+      { nome: "Nathália Thaísa Maciel Duarte", nasc: "31/03/1987" },
+      { nome: "Diego César Maciel Duarte", nasc: "16/02/1993" }
+    ] },
+    { nome: "Elias Batista Maciel", nasc: "28/10/1964", conj: "Neuza Barbosa Souza Maciel (1965)", filhos: [
+      { nome: "Guilherme Júnior Souza Maciel", nasc: "20/07/1989" },
+      { nome: "Vinícius Souza Maciel", nasc: "06/08/1990" },
+      { nome: "Luiz Otávio Souza Maciel", nasc: "22/11/1993" }
+    ] },
+    { nome: "Reginaldo Batista Maciel", nasc: "04/11/1966", conj: "Vanderléia Cristina Martins Maciel", filhos: [
+      { nome: "Rute Élen Martins Maciel", nasc: "16/09/1999" }
+    ] },
+    { nome: "Flávio Batista Maciel", nasc: "28/01/1968", conj: "Maria Aparecida Maciel", filhos: [
+      { nome: "Flávia Júnia Maciel", nasc: "07/09/1980" },
+      { nome: "Tiago Henrique Maciel", nasc: "22/07/1984" }
+    ] },
+    { nome: "Suzana Batista Maciel", nasc: "22/09/1968", conj: "João Nogueira Sobrinho (1960)", filhos: [
+      { nome: "Lorena Maciel Nogueira", nasc: "19/06/1993" },
+      { nome: "Bruno Augusto Maciel Nogueira", nasc: "30/11/1996" }
+    ] },
+    { nome: "Cláudio Alan Batista Maciel", nasc: "07/07/1977" }
+  ] },
+  { nome: "Sebastião Cordeiro Maciel", nasc: "20/01/1940", obs: "falecido em 08/08/2020", conj: "Elza Ribeiro Maciel (1943)", filhos: [
+    { nome: "Hudson dos Passos Cordeiro Maciel", nasc: "15/03/1964" },
+    { nome: "Tânia Maria Ribeiro Maciel de Jesus", nasc: "14/03/1966", conj: "Wilson Afonso de Jesus (1964)", filhos: [
+      { nome: "Eduardo Maciel de Jesus", nasc: "15/06/1999" },
+      { nome: "Stela Maciel Correa", nasc: "21/11/1986" }
+    ] },
+    { nome: "Arleth Ribeiro Maciel Neves", nasc: "12/04/1968", conj: "Marcos Ferreira das Neves (1965)", filhos: [
+      { nome: "Leonardo Maciel Neves", nasc: "02/11/1994" },
+      { nome: "Matheus Maciel Neves", nasc: "03/04/1987" }
+    ] },
+    { nome: "Edson dos Passos Cordeiro Maciel", nasc: "03/05/1971" },
+    { nome: "Emerson Cordeiro Maciel", nasc: "27/08/1975", conj: "Nilda Socorro da Silva (1969)", filhos: [
+      { nome: "Emerson Cordeiro Maciel Júnior", nasc: "29/03/1994" }
+    ] }
+  ] },
+  { nome: "Cleusa Maria Cordeiro Machado", nasc: "15/07/1942", obs: "falecida em 2007", conj: "José Eustáquio Cordeiro Machado (Taquinho), ver seção de Antônio & Matildes", filhos: [
+    { nome: "Jorge Eustáquio Cordeiro Machado", nasc: "22/01/1982", obs: "ver descendência em Antônio & Matildes" }
+  ] }
 ];
 
-// Filhos de Jorge Cordeiro Maciel e Joaquina Bernarda de Castro Machado
-const FILHOS_JORGE = [
-  { nome: "América Cordeiro da Silva", apelido: "Fia", sexo: "F", nascimento: "03/04/1934", conjuges: ["José Francisco da Silva"],
-    filhos: [{ nome: "Milton Francisco da Silva", nascimento: "28/06/1951", conjuges: ["Neuza Maria da Silva"] }] },
-  { nome: "José Naíde Cordeiro Maciel", sexo: "M", nascimento: "03/02/1937", conjuges: ["Maria das Dores Batista Maciel"],
-    filhos: [
-      { nome: "Marlene Batista Maciel", nascimento: "04/07/1959", conjuges: ["Antônio de Almeida Duarte"] },
-      { nome: "Flávio Batista Maciel", nascimento: "28/01/1968", conjuges: ["Maria Aparecida Maciel"] },
-      { nome: "Maria Gorethe Maciel Duarte", nascimento: "05/01/1963", conjuges: ["Carlos César Gonçalves Duarte"] },
-      { nome: "Elias Batista Maciel", nascimento: "28/10/1964", conjuges: ["Neuza Barbosa Souza Maciel"] },
-      { nome: "Reginaldo Batista Maciel", nascimento: "04/11/1966", conjuges: ["Vanderléia Cristina Martins Maciel"] },
-      { nome: "Suzana Batista Maciel", nascimento: "22/09/1968", conjuges: ["João Nogueira Sobrinho"] },
-      { nome: "Cláudio Alan Batista Maciel", nascimento: "07/07/1977" }
-    ] },
-  { nome: "Sebastião Cordeiro Maciel", sexo: "M", nascimento: "20/01/1940", conjuges: ["Elza Ribeiro Maciel"],
-    filhos: [
-      { nome: "Hudson dos Passos Cordeiro Maciel", nascimento: "15/03/1964" },
-      { nome: "Tânia Maria Ribeiro Maciel de Jesus", nascimento: "14/03/1966", conjuges: ["Wilson Afonso de Jesus"] },
-      { nome: "Arleth Ribeiro Maciel Neves", nascimento: "12/04/1968", conjuges: ["Marcos Ferreira das Neves"] },
-      { nome: "Edson dos Passos Cordeiro Maciel", nascimento: "03/05/1971" },
-      { nome: "Emerson Cordeiro Maciel", nascimento: "27/08/1975", conjuges: ["Nilda Socorro da Silva"] }
-    ] },
-  { nome: "Cleusa Maria Cordeiro", sexo: "F", nascimento: "15/07/1942", conjuges: ["José Eustáquio Cordeiro Machado (Taquinho)"],
-    observacao: "Ver a descendência de Taquinho em Antônio & Matildes." }
-];
-
-// Ancestrais de Antônio (Toniquinho)
+// ---------- ANCESTRAIS ----------
 const ANCESTRAIS_ANTONIO = [
   { depth: 0, nome: "Antônio de Assis Machado Neto (Toniquinho)", datas: "1924 – 1993" },
   { depth: 1, nome: "Lafaiete Cordeiro Filho", datas: "1896 – 1954" },
@@ -87,7 +134,6 @@ const ANCESTRAIS_ANTONIO = [
   { depth: 3, nome: "Maria Joaquina de Campos Cordeiro Valadares", datas: "1853 – 1945" }
 ];
 
-// Ancestrais de Matildes
 const ANCESTRAIS_MATILDES = [
   { depth: 0, nome: "Matildes Cordeiro Maciel", datas: "1926 – 1997" },
   { depth: 1, nome: "José Pedro Duarte Maciel (Zé da Iá)", datas: "1890 – 1950" },
@@ -100,57 +146,43 @@ const ANCESTRAIS_MATILDES = [
   { depth: 2, nome: "Joaquina Bernarda de Castro Machado", datas: "1865 – 1920" }
 ];
 
-// Ancestrais de Jorge Cordeiro Maciel
 const ANCESTRAIS_JORGE = [
   { depth: 0, nome: "Jorge Cordeiro Maciel", datas: "1907 – 1980" },
-  { depth: 1, nome: "José Firmino Cordeiro Maciel (Juca da Invejosa)", datas: "1832 – 1900" },
-  { depth: 2, nome: "Antônio Julião Dias Maciel", datas: "1800 – 1850" },
-  { depth: 2, nome: "Joana Amélia da Silva Cordeiro", datas: "1810 – 1890" },
-  { depth: 1, nome: "Matilde Cordeiro Valadares", datas: "" },
-  { depth: 2, nome: "Ana Joaquina de Campos", datas: "1783 – " },
-  { depth: 2, nome: "João Cordeiro Valadares", datas: "1777 – 1867" }
+  { depth: 1, nome: "José Firmino Cordeiro Maciel (Juca da Invejosa)", datas: "" },
+  { depth: 1, nome: "Matilde Cordeiro Valadares", datas: "1832 – 1900" },
+  { depth: 2, nome: "Jorge Cordeiro Valladares", datas: "≈1805" },
+  { depth: 3, nome: "João Cordeiro Valadares", datas: "" },
+  { depth: 3, nome: "Ana Joaquina de Oliveira Campos", datas: "" },
+  { depth: 2, nome: "Maria Madalena da Costa Sampaio", datas: "" }
 ];
 
-// Ancestrais de Joaquina Bernarda de Castro Machado
 const ANCESTRAIS_JOAQUINA = [
   { depth: 0, nome: "Joaquina Bernarda de Castro Machado", datas: "1905 – 1981" },
-  { depth: 1, nome: "Gustavo da Cunha e Castro", datas: "" },
+  { depth: 1, nome: "Gustavo da Cunha Sá e Castro", datas: "" },
   { depth: 1, nome: "América de Castro Machado", datas: "" }
 ];
 
-function renderFilhos(lista, containerId) {
+// ---------- RENDERIZAÇÃO ----------
+function pessoaHtml(p) {
+  const meta = [p.nasc ? `nasc. ${p.nasc}` : "", p.obs || ""].filter(Boolean).join(" · ");
+  const conj = p.conj ? `<div class="spouse"><strong>Cônjuge:</strong> ${p.conj}</div>` : "";
+  const cabeca = `<div class="pessoa-cab"><strong>${p.nome}</strong>${meta ? ` <span class="meta">${meta}</span>` : ""}</div>${conj}`;
+  if (!p.filhos || !p.filhos.length) return `<li>${cabeca}</li>`;
+  return `<li><details open>
+      <summary>${cabeca}</summary>
+      <ul class="arvore">${p.filhos.map(pessoaHtml).join("")}</ul>
+    </details></li>`;
+}
+
+function renderDescendentes(lista, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-
-  container.innerHTML = lista.map(f => {
-    const sexoClass = f.sexo === "M" ? "male" : "female";
-    const apelido = f.apelido ? ` <em>(${f.apelido})</em>` : "";
-    const conjuges = f.conjuges && f.conjuges.length
-      ? `<div class="spouse"><strong>Cônjuge:</strong> ${f.conjuges.join(" / ")}</div>` : "";
-    const obs = f.observacao ? `<div class="meta">${f.observacao}</div>` : "";
-    const netos = f.filhos && f.filhos.length
-      ? `<div class="netos"><strong>Filhos:</strong><ul style="margin:0.3rem 0 0 1rem;padding:0">` +
-        f.filhos.map(n => {
-          const c = n.conjuges ? ` · c.c. ${n.conjuges.join(", ")}` : "";
-          return `<li>${n.nome}${n.nascimento ? ` (${n.nascimento})` : ""}${c}</li>`;
-        }).join("") + `</ul></div>`
-      : "";
-
-    return `
-      <article class="child-card ${sexoClass}">
-        <h4>${f.nome}${apelido}</h4>
-        <div class="meta">${f.nascimento || "?"}</div>
-        ${obs}
-        ${conjuges}
-        ${netos}
-      </article>`;
-  }).join("");
+  container.innerHTML = `<ul class="arvore">${lista.map(pessoaHtml).join("")}</ul>`;
 }
 
 function renderAncestrais(list, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
-
   container.innerHTML = list.map(item => `
       <div class="tree-item" style="--depth: ${item.depth}" data-depth="${item.depth}">
         <span class="nome">${item.nome}</span>
@@ -160,7 +192,6 @@ function renderAncestrais(list, containerId) {
 
 function enviarSugestao(event) {
   event.preventDefault();
-
   const form = event.target;
   const data = {
     tipo: form.tipo.value,
@@ -174,7 +205,6 @@ function enviarSugestao(event) {
     parentesco: form.parentesco.value,
     contato: form.contato.value
   };
-
   const corpo = `
 Tipo: ${data.tipo}
 Pessoa relacionada: ${data.pessoa}
@@ -188,21 +218,17 @@ Enviado por: ${data.nome}
 Parentesco: ${data.parentesco}
 Contato: ${data.contato}
   `.trim();
-
   const assunto = encodeURIComponent("Sugestão de genealogia - Cordeiro Maciel & Machado");
   const body = encodeURIComponent(corpo);
-
   // Substitua pelo e-mail real da pessoa responsável
   const email = "samuelcernunnos@mail.com";
   window.location.href = `mailto:${email}?subject=${assunto}&body=${body}`;
-
   return false;
 }
 
 function setupNav() {
   const links = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll(".section");
-
   function updateActive() {
     let current = "";
     sections.forEach(sec => {
@@ -212,14 +238,13 @@ function setupNav() {
       link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
     });
   }
-
   window.addEventListener("scroll", updateActive);
   updateActive();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderFilhos(FILHOS_ANTONIO, "filhos-antonio");
-  renderFilhos(FILHOS_JORGE, "filhos-jorge");
+  renderDescendentes(DESCENDENTES_ANTONIO, "filhos-antonio");
+  renderDescendentes(DESCENDENTES_JORGE, "filhos-jorge");
   renderAncestrais(ANCESTRAIS_ANTONIO, "ancestrais-antonio");
   renderAncestrais(ANCESTRAIS_MATILDES, "ancestrais-matildes");
   renderAncestrais(ANCESTRAIS_JORGE, "ancestrais-jorge");
